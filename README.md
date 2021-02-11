@@ -1,4 +1,4 @@
-# aardwolfclientpackage-installer
+# redemptionclientpackage-installer
 NSIS installer creation scripts for https://github.com/Xinefus-Braska/redemptionclientpackage. This is run automatically with AppVeyor to build release installers whenever code is pushed to the main branch.
 
 
