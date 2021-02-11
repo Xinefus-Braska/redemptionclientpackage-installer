@@ -1,6 +1,6 @@
-; Aardwolf MUSHclient Package Installer
+; Rdemption MUSHclient Package Installer
 ;
-; Finally, an installer generator for the Aardwolf MUSHclient Package?
+; Finally, an installer generator for the Redemption MUSHclient Package?
 ;
 ;--------------------------------
 SetCompressor /SOLID /FINAL lzma
@@ -12,7 +12,7 @@ SetCompressor /SOLID /FINAL lzma
 !makensis "get_version.nsi"
 
 ; Find version string and put it into PackageVersion variable.
-!system "GetAardwolfPackageVersion.exe"
+!system "GetRedemptionPackageVersion.exe"
 !include "PackageVersion.txt"
 !delfile "PackageVersion.txt"
 
@@ -20,10 +20,10 @@ SetCompressor /SOLID /FINAL lzma
 ShowInstDetails show
 
 ; Name of the package
-Name "Aardwolf MUSHclient ${PackageVersion}"
+Name "Redemption MUSHclient ${PackageVersion}"
 
 ; File to write
-OutFile "Aardwolf_MUSHclient_${PackageVersion}.exe"
+OutFile "Redemption_MUSHclient_${PackageVersion}.exe"
 
 ; rtf or txt file - remember if it is txt, it must be in the DOS text format (\r\n)
 LicenseData "hello.rtf"
@@ -33,7 +33,7 @@ InstallDir "$DESKTOP\MUSHclient\"
 
 ; Registry key to check for directory (so if you install again, it will
 ; overwrite the old one automatically)
-InstallDirRegKey HKCU "Software\AardwolfMUSHclient" "Install_Dir"
+InstallDirRegKey HKCU "Software\RedemptionMUSHclient" "Install_Dir"
 
 ; Request application privileges?
 ;RequestExecutionLevel admin
@@ -53,7 +53,7 @@ Section "" ; No components page, name not important
 SetOutPath $INSTDIR
 
 ; Write the installation path into the registry
-WriteRegStr HKCU "Software\AardwolfMUSHclient" "Install_Dir" "$INSTDIR"
+WriteRegStr HKCU "Software\RedemptionMUSHclient" "Install_Dir" "$INSTDIR"
 
 ; Add most files always, e"x"cluding the listed ones.
 SetOverwrite on

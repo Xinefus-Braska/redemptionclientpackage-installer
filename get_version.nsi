@@ -1,4 +1,4 @@
-; Script, run at compile time by installer builder, to extract the latest version identifier from AardwolfPackageChanges.txt
+; Script, run at compile time by installer builder, to extract the latest version identifier from RedemptionPackageChanges.txt
 
 ; http://nsis.sourceforge.net/LineRead
 Function LineRead
@@ -122,13 +122,13 @@ FunctionEnd
 !macroend
 !insertmacro Func_StrRep
 
-OutFile "GetAardwolfPackageVersion.exe"
+OutFile "GetRedemptionPackageVersion.exe"
 SilentInstall silent
 
 Section
 
 ; Get file version
-${LineRead} "MUSHclient\AardwolfPackageChanges.txt" "3" $R0
+${LineRead} "MUSHclient\RedemptionPackageChanges.txt" "3" $R0
 
 ${StrRep} $R0 $R0 "$\r$\n" ""
 ${StrRep} $R0 $R0 " snapshot" ""
