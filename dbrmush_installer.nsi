@@ -39,7 +39,7 @@ InstallDirRegKey HKCU "Software\RedemptionMUSHclient" "Install_Dir"
 ;RequestExecutionLevel admin
 
 ; Text to prompt the user to enter a directory
-DirText "This will install the Aardwolf MUSHclient Package ( ${PackageVersion} )."
+DirText "This will install the Redemption MUSHclient Package ( ${PackageVersion} )."
 
 Page license
 Page directory
@@ -58,7 +58,7 @@ WriteRegStr HKCU "Software\RedemptionMUSHclient" "Install_Dir" "$INSTDIR"
 ; Add most files always, e"x"cluding the listed ones.
 SetOverwrite on
 AllowSkipFiles off
-File /r /x Aardwolf.db /x Aardwolf.mcl /x state /x mushclient_prefs.sqlite /x MUSHclient.ini /x .gitignore /x appveyor.yml MUSHclient\*
+File /r /x Aardwolf.db /x DBR.mcl /x state /x mushclient_prefs.sqlite /x MUSHclient.ini /x .gitignore /x appveyor.yml MUSHclient\*
 
 ; Add the next files only if not already there.
 ; You could technically do this in one line after SetOverwrite off
@@ -69,7 +69,7 @@ File MUSHclient\Aardwolf.db
 File MUSHclient\mushclient_prefs.sqlite
 File MUSHclient\MUSHclient.ini
 SetOutPath $INSTDIR\worlds
-File MUSHclient\worlds\Aardwolf.mcl
+File MUSHclient\worlds\DBR.mcl
 SetOutPath $INSTDIR\worlds\plugins\state
 File MUSHclient\worlds\plugins\state\*
 SetOutPath $INSTDIR
